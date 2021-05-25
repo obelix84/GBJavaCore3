@@ -17,7 +17,9 @@ public class Server {
         this.clients = new ArrayList<>();
 
         //Открываем джоступ к БД
-        SQLHelper.connect();
+        if (!SQLHelper.connect()) {
+            throw new RuntimeException("Не могу подключиться к БД");
+        };
         //создаем сервис для доступа к данным пользователей
         authService = new AuthServiceDB();
 
