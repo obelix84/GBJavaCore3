@@ -29,24 +29,23 @@ public class NumbersMethods {
 //    единицы, то метод вернет false; если в нем есть что то, кроме 1 и 4, то метод вернет false;
 //    Написать набор тестов для этого метода (по 3-4 варианта входных данных).
 //
-    public boolean methodTwo(int [] numbers) {
+    public static boolean methodTwo(int [] numbers) {
         int countFours = 0;
         int countOnes = 0;
-        System.out.println("входим");
         for (int i = 0; i < numbers.length; i++) {
             int number = numbers[i];
             System.out.println(number);
-            if (number == 4 || number == 1) {
+            if (number == 4) {
                 countFours++;
+            } else if (number == 1){
                 countOnes++;
-            } else {
+            }
+            else {
                 return false;
 
             }
         }
-        System.out.println("выходим");
-        return true;
-       // return (countFours > 0 && countOnes > 0);
+        return (countFours > 0 && countOnes > 0);
     }
 
 }

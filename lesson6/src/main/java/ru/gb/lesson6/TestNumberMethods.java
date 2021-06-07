@@ -52,8 +52,25 @@ public class TestNumberMethods {
     @Test
     public void testMethodTwo1() {
         int [] numbers = {1, 1, 1, 4, 4, 1, 4, 4};
-        numbersMethods.methodTwo(numbers);
         Assertions.assertTrue(numbersMethods.methodTwo(numbers));
+    }
+
+    @Test
+    public void testMethodTwo2() {
+        int [] numbers = {1, 1, 1, 3, 4, 1, 4, 4};
+        Assertions.assertFalse(numbersMethods.methodTwo(numbers));
+    }
+
+    @Test
+    public void testMethodTwo3() {
+        int [] numbers = {1, 1, 1, 1, 1, 1};
+        Assertions.assertFalse(numbersMethods.methodTwo(numbers));
+    }
+
+    @Test
+    public void testMethodTwo4() {
+        int [] numbers = {4, 4, 4, 4, 4, 4, 4, 4};
+        Assertions.assertFalse(numbersMethods.methodTwo(numbers));
     }
 
 }
