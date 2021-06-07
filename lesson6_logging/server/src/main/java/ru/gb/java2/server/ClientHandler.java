@@ -31,17 +31,21 @@ public class ClientHandler {
                 while (true) {
                     String msg = in.readUTF();
                     if(msg.startsWith("/")) {
+                        Server.logger.info("Пришла команда от клиента с ником " + username);
                         if (executeCommand(msg)) break;
                     }
+                    Server.logger.info("Пришло сообщение от клиента с ником " + username);
                 }
 
                 //цикл общения
                 while (true) {
                     String msg = in.readUTF();
                     if(msg.startsWith("/")) {
+                        Server.logger.info("Пришла команда от клиента с ником " + username);
                         if (executeCommand(msg)) break;
                         continue;
                     }
+                    Server.logger.info("Пришло сообщение от клиента с ником " + username);
                     String message = String.format("<%s> %s",username, msg);
                     server.broadcastMessage(message);
                 }
@@ -60,7 +64,6 @@ public class ClientHandler {
 
         if(cmd.startsWith("/exit")) {
             // выходим из цикла
-            Server.logger.info("Клиент отключился..");
             return true;
         }
         //авторизация /login login password

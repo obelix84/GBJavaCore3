@@ -61,17 +61,20 @@ public class Server {
 
     public synchronized void subscribe(ClientHandler clientHandler) {
         clients.add(clientHandler);
+        logger.info("Клиент " + clientHandler.getUsername() + " подлючился");
         broadcastMessage("Клиент " + clientHandler.getUsername() + " подлючился \n");
         broadcastClientList();
     }
 
     public synchronized void unsubscribe(ClientHandler clientHandler) {
         clients.remove(clientHandler);
+        logger.info("Клиент " + clientHandler.getUsername() + " отключился");
         broadcastMessage("Клиент " + clientHandler.getUsername() + " отключился \n");
         broadcastClientList();
     }
 
     public synchronized void broadcastMessage(String message) {
+        logger.info("Отправка сообщения всем клиентам");
         for (ClientHandler clientHandler : clients) {
             clientHandler.sendMessage(message);
         }
@@ -88,6 +91,7 @@ public class Server {
     }
 
     public synchronized void privateMessage(ClientHandler sender, String message, String nick) {
+        logger.info("Отправка личного сообщение для " + nick);
         for (ClientHandler client : clients) {
             if (client.getUsername().equals(nick)) {
                 sender.sendMessage("Личное сообщение для " + nick + ": " + message);
@@ -95,10 +99,12 @@ public class Server {
                 return;
             }
         }
+        logger.info("Клиента с ником " + nick + " нет на севрере");
         sender.sendMessage("Такого пользователя нет!\n");
     }
 
     public synchronized void  broadcastClientList() {
+        logger.info("Отправка списка клиннтов все участникам");
         StringBuilder stringBuilder = new StringBuilder("/clients_list ");
         for (ClientHandler client : clients) {
             stringBuilder.append(client.getUsername()).append(" ");

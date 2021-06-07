@@ -1,30 +1,30 @@
-июн 08, 2021 1:30:44 AM ru.gb.java2.server.Server <init>
+июн 08, 2021 2:40:42 AM ru.gb.java2.server.Server <init>
 INFO: Сервер запущен на порту 8189...
-июн 08, 2021 1:30:44 AM ru.gb.java2.server.Server <init>
+июн 08, 2021 2:40:42 AM ru.gb.java2.server.Server <init>
 INFO: Ждём нового клиента...
-июн 08, 2021 1:49:44 AM ru.gb.java2.server.Server <init>
-INFO: Сервер запущен на порту 8189...
-июн 08, 2021 1:49:44 AM ru.gb.java2.server.Server <init>
-INFO: Ждём нового клиента...
-июн 08, 2021 1:51:25 AM ru.gb.java2.server.Server <init>
-INFO: Сервер запущен на порту 8189...
-июн 08, 2021 1:51:25 AM ru.gb.java2.server.Server <init>
-INFO: Ждём нового клиента...
-июн 08, 2021 1:51:35 AM ru.gb.java2.server.Server <init>
+июн 08, 2021 2:40:52 AM ru.gb.java2.server.Server <init>
 INFO: Клиент подключился
-июн 08, 2021 1:51:35 AM ru.gb.java2.server.Server <init>
+июн 08, 2021 2:40:52 AM ru.gb.java2.server.Server <init>
 INFO: Ждём нового клиента...
-июн 08, 2021 2:13:45 AM ru.gb.java2.server.Server <init>
-INFO: Клиент подключился
-июн 08, 2021 2:13:45 AM ru.gb.java2.server.Server <init>
-INFO: Ждём нового клиента...
-июн 08, 2021 2:14:48 AM ru.gb.java2.server.Server <init>
-INFO: Сервер запущен на порту 8189...
-июн 08, 2021 2:14:48 AM ru.gb.java2.server.Server <init>
-INFO: Ждём нового клиента...
-июн 08, 2021 2:15:02 AM ru.gb.java2.server.Server <init>
-INFO: Клиент подключился
-июн 08, 2021 2:15:02 AM ru.gb.java2.server.Server <init>
-INFO: Ждём нового клиента...
-июн 08, 2021 2:15:09 AM ru.gb.java2.server.ClientHandler executeCommand
-INFO: Клиент отключился..
+июн 08, 2021 2:40:52 AM ru.gb.java2.server.ClientHandler lambda$new$0
+INFO: Пришла команда от клиента с ником null
+июн 08, 2021 2:40:52 AM ru.gb.java2.server.Server subscribe
+INFO: Клиент Sam подлючился
+июн 08, 2021 2:40:52 AM ru.gb.java2.server.Server broadcastMessage
+INFO: Отправка сообщения всем клиентам
+июн 08, 2021 2:40:52 AM ru.gb.java2.server.Server broadcastClientList
+INFO: Отправка списка клиннтов все участникам
+июн 08, 2021 2:41:00 AM ru.gb.java2.server.ClientHandler lambda$new$0
+INFO: Пришла команда от клиента с ником Sam
+июн 08, 2021 2:41:06 AM ru.gb.java2.server.ClientHandler lambda$new$0
+INFO: Пришло сообщение от клиента с ником Sam
+июн 08, 2021 2:41:06 AM ru.gb.java2.server.Server broadcastMessage
+INFO: Отправка сообщения всем клиентам
+июн 08, 2021 2:41:13 AM ru.gb.java2.server.ClientHandler lambda$new$0
+INFO: Пришла команда от клиента с ником Sam
+июн 08, 2021 2:41:13 AM ru.gb.java2.server.Server unsubscribe
+INFO: Клиент Sam отключился
+июн 08, 2021 2:41:13 AM ru.gb.java2.server.Server broadcastMessage
+INFO: Отправка сообщения всем клиентам
+июн 08, 2021 2:41:13 AM ru.gb.java2.server.Server broadcastClientList
+INFO: Отправка списка клиннтов все участникам
