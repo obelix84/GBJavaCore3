@@ -1,17 +1,21 @@
-package ru.gb.lesson6;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import ru.gb.lesson6.NumbersMethods;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Stream;
 
 public class TestNumberMethods {
     private NumbersMethods numbersMethods;
 
-    @BeforeTest
+    @BeforeEach
     public void init(){
         numbersMethods = new NumbersMethods();
-        System.out.println("init");
     }
 
     @Test
@@ -49,6 +53,29 @@ public class TestNumberMethods {
            numbersMethods.methodOne(numbers);
        });
     }
+
+    // Посмотреть как работает
+    @ParameterizedTest
+    @MethodSource("dataForMethodOne")
+    public void testMethodOneAll(int[] array, int [] result) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
+        for (int i = 0; i < result.length; i++) {
+            System.out.print(result[i] + " ");
+        }
+        Assertions.assertArrayEquals(result, numbersMethods.methodOne(array));
+    }
+
+    public static Stream<Arguments> dataForMethodOne() {
+        List<Arguments> out = new ArrayList<>();
+        out.add(Arguments.arguments(new int[] {1,2,4,4,2,3,4,1,7}, new int[] {1,7}));
+        out.add(Arguments.arguments(new int[] {1,2,4,4,2,3,4,1,4}, new int[] {}));
+        out.add(Arguments.arguments(new int[] {1,2,4,4,2,3,44,1}, new int[] {2,3,44,1}));
+        out.add(Arguments.arguments(new int[] {4,2,44,54,2,3,44,1}, new int[] {2,44,54,2,3,44,1}));
+        return out.stream();
+    }
+
 
     @Test
     public void testMethodTwo1() {
