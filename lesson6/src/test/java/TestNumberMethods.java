@@ -54,16 +54,10 @@ public class TestNumberMethods {
        });
     }
 
-    // Посмотреть как работает
+    // Для пробы, хочу посмотреть как работает
     @ParameterizedTest
     @MethodSource("dataForMethodOne")
     public void testMethodOneAll(int[] array, int [] result) {
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
-        }
-        for (int i = 0; i < result.length; i++) {
-            System.out.print(result[i] + " ");
-        }
         Assertions.assertArrayEquals(result, numbersMethods.methodOne(array));
     }
 
