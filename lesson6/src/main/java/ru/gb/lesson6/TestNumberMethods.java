@@ -2,12 +2,13 @@ package ru.gb.lesson6;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class TestNumberMethods {
     private NumbersMethods numbersMethods;
 
-    @BeforeEach
+    @BeforeTest
     public void init(){
         numbersMethods = new NumbersMethods();
         System.out.println("init");

@@ -9,7 +9,7 @@ public class NumbersMethods {
 //    Метод должен вернуть новый массив, который получен путем вытаскивания из исходного массива элементов, идущих
 //    после последней четверки. Входной массив должен содержать хотя бы одну четверку, иначе в методе необходимо
 //    выбросить RuntimeException.
-    public static int[] methodOne(int [] numbers) throws RuntimeException{
+    public int[] methodOne(int [] numbers) throws RuntimeException{
         int pos = numbers.length;
         for (int i = numbers.length - 1; i >= 0; i--) {
             if (numbers[i] == 4) {
@@ -29,20 +29,16 @@ public class NumbersMethods {
 //    единицы, то метод вернет false; если в нем есть что то, кроме 1 и 4, то метод вернет false;
 //    Написать набор тестов для этого метода (по 3-4 варианта входных данных).
 //
-    public static boolean methodTwo(int [] numbers) {
+    public boolean methodTwo(int [] numbers) {
         int countFours = 0;
         int countOnes = 0;
-        for (int i = 0; i < numbers.length; i++) {
-            int number = numbers[i];
-            System.out.println(number);
+        for (int number : numbers) {
             if (number == 4) {
                 countFours++;
-            } else if (number == 1){
+            } else if (number == 1) {
                 countOnes++;
-            }
-            else {
+            } else {
                 return false;
-
             }
         }
         return (countFours > 0 && countOnes > 0);
