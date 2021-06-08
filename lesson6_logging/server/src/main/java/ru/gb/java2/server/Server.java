@@ -6,6 +6,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
@@ -32,8 +33,9 @@ public class Server {
         //Открываем доступ к БД
         //Прокидываем логгер в класс с БД
         if (!SQLHelper.connect()) {
-            logger.severe("Не удалось подключиться к базе данных!");
-            throw new RuntimeException("Не могу подключиться к БД");
+            RuntimeException e = new RuntimeException("Не могу подключиться к БД");
+            logger.log(Level.SEVERE,"Не удалось подключиться к базе данных!", e);
+            throw e;
         }
         //создаем сервис для доступа к данным пользователей
         authService = new AuthServiceDB();
@@ -47,8 +49,8 @@ public class Server {
                 new ClientHandler(socket, this);
             }
         } catch (IOException e) {
-            logger.severe("Не удалось открыть соединение!");
-            e.printStackTrace();
+            logger.log(Level.SEVERE,"Ошибка при закрытии сокета", e);
+            //e.printStackTrace();
         } finally {
             SQLHelper.disconnect();
         }

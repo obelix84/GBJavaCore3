@@ -28,3 +28,47 @@ INFO: Клиент Sam отключился
 INFO: Отправка сообщения всем клиентам
 июн 08, 2021 2:41:13 AM ru.gb.java2.server.Server broadcastClientList
 INFO: Отправка списка клиннтов все участникам
+июн 08, 2021 1:37:23 PM ru.gb.java2.server.Server <init>
+INFO: Сервер запущен на порту 8189...
+июн 08, 2021 1:37:23 PM ru.gb.java2.server.Server <init>
+INFO: Ждём нового клиента...
+июн 08, 2021 1:37:35 PM ru.gb.java2.server.Server <init>
+INFO: Клиент подключился
+июн 08, 2021 1:37:35 PM ru.gb.java2.server.Server <init>
+INFO: Ждём нового клиента...
+июн 08, 2021 1:37:35 PM ru.gb.java2.server.ClientHandler lambda$new$0
+INFO: Пришла команда от клиента с ником null
+июн 08, 2021 1:37:35 PM ru.gb.java2.server.Server subscribe
+INFO: Клиент bobby подлючился
+июн 08, 2021 1:37:35 PM ru.gb.java2.server.Server broadcastMessage
+INFO: Отправка сообщения всем клиентам
+июн 08, 2021 1:37:35 PM ru.gb.java2.server.Server broadcastClientList
+INFO: Отправка списка клиннтов все участникам
+июн 08, 2021 1:37:38 PM ru.gb.java2.server.ClientHandler lambda$new$0
+INFO: Пришло сообщение от клиента с ником bobby
+июн 08, 2021 1:37:38 PM ru.gb.java2.server.Server broadcastMessage
+INFO: Отправка сообщения всем клиентам
+июн 08, 2021 1:37:45 PM ru.gb.java2.server.ClientHandler lambda$new$0
+INFO: Пришло сообщение от клиента с ником bobby
+июн 08, 2021 1:37:45 PM ru.gb.java2.server.Server broadcastMessage
+INFO: Отправка сообщения всем клиентам
+июн 08, 2021 1:37:46 PM ru.gb.java2.server.ClientHandler lambda$new$0
+INFO: Пришло сообщение от клиента с ником bobby
+июн 08, 2021 1:37:46 PM ru.gb.java2.server.Server broadcastMessage
+INFO: Отправка сообщения всем клиентам
+июн 08, 2021 1:37:54 PM ru.gb.java2.server.ClientHandler lambda$new$0
+INFO: Пришло сообщение от клиента с ником bobby
+июн 08, 2021 1:37:54 PM ru.gb.java2.server.Server broadcastMessage
+INFO: Отправка сообщения всем клиентам
+июн 08, 2021 1:38:10 PM ru.gb.java2.server.ClientHandler lambda$new$0
+INFO: Пришло сообщение от клиента с ником bobby
+июн 08, 2021 1:38:10 PM ru.gb.java2.server.Server broadcastMessage
+INFO: Отправка сообщения всем клиентам
+июн 08, 2021 1:38:14 PM ru.gb.java2.server.ClientHandler lambda$new$0
+INFO: Пришла команда от клиента с ником bobby
+июн 08, 2021 1:38:14 PM ru.gb.java2.server.Server unsubscribe
+INFO: Клиент bobby отключился
+июн 08, 2021 1:38:14 PM ru.gb.java2.server.Server broadcastMessage
+INFO: Отправка сообщения всем клиентам
+июн 08, 2021 1:38:14 PM ru.gb.java2.server.Server broadcastClientList
+INFO: Отправка списка клиннтов все участникам

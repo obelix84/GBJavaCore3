@@ -7,6 +7,7 @@ import java.net.Socket;
 import java.text.Format;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.logging.Level;
 
 public class ClientHandler {
     private Socket socket;
@@ -128,24 +129,24 @@ public class ClientHandler {
             try {
                 in.close();
             } catch (IOException e) {
-                Server.logger.severe("Ошибка закрытия соединения!");
-                e.printStackTrace();
+                Server.logger.log(Level.SEVERE,"Ошибка закрытия соединения!", e);
+                //e.printStackTrace();
             }
         }
         if(out != null) {
             try {
                 out.close();
             } catch (IOException e) {
-                Server.logger.severe("Ошибка закрытия соединения!");
-                e.printStackTrace();
+                Server.logger.log(Level.SEVERE,"Ошибка закрытия соединения!", e);
+                //e.printStackTrace();
             }
         }
         if(socket != null) {
             try {
                 socket.close();
             } catch (IOException e) {
-                Server.logger.severe("Ошибка закрытия соединения!");
-                e.printStackTrace();
+                Server.logger.log(Level.SEVERE,"Ошибка закрытия соединения!", e);
+                //e.printStackTrace();
             }
         }
     }
@@ -154,7 +155,7 @@ public class ClientHandler {
         try {
             out.writeUTF(message);
         } catch (IOException e) {
-            Server.logger.severe("Ошибка отправки сообщения клиенту!");
+            Server.logger.log(Level.SEVERE,"Ошибка отправки сообщения клиенту!", e);
             disconnect();
         }
     }

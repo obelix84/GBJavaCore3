@@ -2,6 +2,7 @@ package ru.gb.java2.server;
 
 
 import java.sql.*;
+import java.util.logging.Level;
 
 
 public class SQLHelper {
@@ -19,8 +20,8 @@ public class SQLHelper {
             psChangeNick = connection.prepareStatement("UPDATE users SET nickname = ? WHERE nickname = ?;");
             return true;
         } catch (Exception e) {
-            Server.logger.severe("Ошибка соединения с базой данных или/и создания prepeared statements");
-            e.printStackTrace();
+            Server.logger.log(Level.SEVERE,"Ошибка соединения с базой данных или/и создания prepeared statements", e);
+            //e.printStackTrace();
             return false;
         }
     }
@@ -30,14 +31,14 @@ public class SQLHelper {
             psRegister.close();
             psChangeNick.close();
         } catch (SQLException e) {
-            Server.logger.severe("Ошибка закрытия prepeared statements!");
-            e.printStackTrace();
+            Server.logger.log(Level.SEVERE,"Ошибка закрытия prepeared statements!", e);
+            //e.printStackTrace();
         }
         try {
             connection.close();
         } catch (SQLException e) {
-            Server.logger.severe("Ошибка соединения с БД!");
-            e.printStackTrace();
+            Server.logger.log(Level.SEVERE,"Ошибка соединения с БД!", e);
+            //e.printStackTrace();
         }
     }
 
@@ -51,8 +52,8 @@ public class SQLHelper {
                 nickname = res.getString("nickname");
             }
         } catch (SQLException sqlExc) {
-            Server.logger.severe("Ошибка выполнения SQL запроса!");
-            sqlExc.printStackTrace();
+            Server.logger.log(Level.SEVERE,"Ошибка выполнения SQL запроса!", sqlExc);
+            //sqlExc.printStackTrace();
         }
         return nickname;
     }
@@ -64,8 +65,8 @@ public class SQLHelper {
             psChangeNick.executeUpdate();
             return true;
         } catch (SQLException sqlExc) {
-            Server.logger.severe("Ошибка выполнения SQL запроса!");
-            sqlExc.printStackTrace();
+            Server.logger.log(Level.SEVERE,"Ошибка выполнения SQL запроса!", sqlExc);
+            //sqlExc.printStackTrace();
             return false;
         }
     }
@@ -78,8 +79,8 @@ public class SQLHelper {
             psRegister.executeUpdate();
             return true;
         } catch (SQLException sqlExc) {
-            Server.logger.severe("Ошибка выполнения SQL запроса!");
-            sqlExc.printStackTrace();
+            Server.logger.log(Level.SEVERE,"Ошибка выполнения SQL запроса!", sqlExc);
+            //sqlExc.printStackTrace();
             return false;
         }
     }
